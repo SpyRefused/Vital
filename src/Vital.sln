@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vital.Api", "Vital.Api\Vital.Api.csproj", "{C8EF7AF4-B8D8-45D4-A875-6538F3C82CB1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5E4452ED-2C14-41B0-9CC9-FAF8CEAF85FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vital.Client", "Vital.Client\Vital.Client.csproj", "{F1DE1650-8102-4635-A6A6-03144DD1B997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doctor", "Doctor", "{3F9F825C-6500-491B-9E15-56680A272048}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vital.Infrastructure", "Vital.Infrastructure\Vital.Infrastructure.csproj", "{2FA3133A-265A-4767-82D7-436CD0DA58A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{EA07DB18-3042-47DD-8C1B-A4ACE67E0B13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vital.Identity", "Vital.Identity\Vital.Identity.csproj", "{08935E6C-E0B8-456C-BFB0-129CED156AEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vital.Doctor", "Vital.Doctor\Vital.Doctor.csproj", "{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8EF7AF4-B8D8-45D4-A875-6538F3C82CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EF7AF4-B8D8-45D4-A875-6538F3C82CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EF7AF4-B8D8-45D4-A875-6538F3C82CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EF7AF4-B8D8-45D4-A875-6538F3C82CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E4452ED-2C14-41B0-9CC9-FAF8CEAF85FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4452ED-2C14-41B0-9CC9-FAF8CEAF85FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4452ED-2C14-41B0-9CC9-FAF8CEAF85FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4452ED-2C14-41B0-9CC9-FAF8CEAF85FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1DE1650-8102-4635-A6A6-03144DD1B997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DE1650-8102-4635-A6A6-03144DD1B997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DE1650-8102-4635-A6A6-03144DD1B997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DE1650-8102-4635-A6A6-03144DD1B997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA3133A-265A-4767-82D7-436CD0DA58A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA3133A-265A-4767-82D7-436CD0DA58A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA3133A-265A-4767-82D7-436CD0DA58A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA3133A-265A-4767-82D7-436CD0DA58A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08935E6C-E0B8-456C-BFB0-129CED156AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08935E6C-E0B8-456C-BFB0-129CED156AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08935E6C-E0B8-456C-BFB0-129CED156AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08935E6C-E0B8-456C-BFB0-129CED156AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FA3133A-265A-4767-82D7-436CD0DA58A5} = {EA07DB18-3042-47DD-8C1B-A4ACE67E0B13}
+		{8D9525FC-B3C8-44B9-BEF6-B5E9D474A2D0} = {3F9F825C-6500-491B-9E15-56680A272048}
+	EndGlobalSection
+EndGlobal

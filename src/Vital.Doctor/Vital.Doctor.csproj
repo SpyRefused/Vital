@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Vital.Doctor</AssemblyName>
+    <RootNamespace>Vital.Doctor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vital.Infrastructure\Vital.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

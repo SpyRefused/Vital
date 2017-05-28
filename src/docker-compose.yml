@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  vital.api:
+    image: vital.api
+    build:
+      context: ./Vital.Api
+      dockerfile: Dockerfile
+
+  vital.client:
+    image: vital.client
+    build:
+      context: ./Vital.Client
+      dockerfile: Dockerfile

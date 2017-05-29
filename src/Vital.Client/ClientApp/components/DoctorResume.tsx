@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { ApplicationState }  from '../store';
 import * as DoctorResumeState from '../store/Doctor';
+import Resume = DoctorResumeState.Resume;
 
 // At runtime, Redux will merge together...
 type DoctorResumeProps =
@@ -43,7 +44,7 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
                            <th>mes</th>
                            <th>año</th>
                            <th>observaciones</th>
-                 
+
                            <th>insureds</th>
                            <th>receipt</th>
                            <th>reg/unreg</th>
@@ -55,27 +56,36 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
                        <tbody>
 
                        {this.props.doctorResume.map(doctorResume => 
-                        <tr key={doctorResume.observations}>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.month}</td>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.year}</td>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.observations}</td>
-                            {doctorResume.resume.map( resume =>
-                                <td>{resume.insureds}</td>
-                                <td>{resume.receipt}</td>
-                                <td>{resume.registersUnregisters}</td>
-                            )}
-
-
-                            </tr>
-                        
-                    )};
-                        
-                       
+                        <div>
+                               <tr key={doctorResume.observations}>
+                                   <td rowSpan={doctorResume.resume.length}>{doctorResume.month}</td>
+                                   <td rowSpan={doctorResume.resume.length}>{doctorResume.year}</td>
+                                   <td rowSpan={doctorResume.resume.length}>{doctorResume.observations}</td>
+                                   <td>{doctorResume.resume[0].insureds}</td>
+                                   <td>{doctorResume.resume[0].receipt}</td>
+                                   <td>{doctorResume.resume[0].registersUnregisters}</td>
+                                   
+                               </tr>
+                            
+                               {doctorResume.resume.map((resume, index) => {
+                                 
+                                    if (index  > 0) {
+                                        <tr>
+                                            <td>{resume.insureds}</td>
+                                            <td>{resume.receipt}</td>
+                                            <td>{resume.registersUnregisters}</td>
+                                        </tr>;
+                                    }
+                                } )}
+                               
+                            </div>
+                           )};
                        </tbody>
                    </table>
                </div>;
     }
 }
+
 
 export default connect( 
     (state: ApplicationState) =>

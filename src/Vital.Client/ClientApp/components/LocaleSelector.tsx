@@ -10,14 +10,14 @@ type LocaleProps =
 
 class LocaleSelector extends React.Component<LocaleProps, void> {
     public render() {
-        return <div>
-                   <a data-toggle="dropdown" className="dropdown-toggle" href="#" aria-expanded="true">
+        return <li className="dropdown">
+                   <a className="count-info dropdown-toggle" href="#" aria-expanded="true">
                        <span className="text-muted text-xs block">Idioma<b className="caret"></b></span></a>
-                   <ul className="dropdown-menu animated fadeInRight m-t-xs">
+                   <ul className="animated fadeInRight m-t-xs ng-scope dropdown-menu">
                        <li><a onClick={ () => { this.props.requestSetLocale('en'); } }>English</a></li>
                        <li><a onClick={ () => { this.props.requestSetLocale('nl'); } }>Needetlan</a></li>
                    </ul>
-               </div>;
+               </li>;
     }
 }
 

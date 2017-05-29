@@ -37,40 +37,26 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
     
     private renderDoctorResumeTable() {
         return <div className='table-responsive'>
-                   <table className='table table-striped'>
+            <table className='table table-striped'>
                        <thead>
                        <tr>
-                           <th>mes</th>
-                           <th>año</th>
-                           <th>observaciones</th>
-                 
-                           <th>insureds</th>
-                           <th>receipt</th>
-                           <th>reg/unreg</th>
-
-
-
+                           <th>Periodo de liquidacion</th>
+                           <th>Codigo de liquidacion</th>
+                           <th>Recibo</th>       
+                           <th>Detalle de servicios</th>   
+                           <th>Observaciones</th>   
+                           <th>Asegurados</th>   
+                           <th>Altas / Bajas</th>  
                        </tr>
                        </thead>
                        <tbody>
-
-                       {this.props.doctorResume.map(doctorResume => 
+                       {this.props.doctorResume.map(doctorResume =>
                         <tr key={doctorResume.observations}>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.month}</td>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.year}</td>
-                            <td rowSpan={doctorResume.resume.length}>{doctorResume.observations}</td>
-                            {doctorResume.resume.map( resume =>
-                                <td>{resume.insureds}</td>
-                                <td>{resume.receipt}</td>
-                                <td>{resume.registersUnregisters}</td>
-                            )}
-
-
-                            </tr>
-                        
-                    )};
-                        
-                       
+                            <td>{doctorResume.year}</td>
+                            <td>{doctorResume.month}</td>
+                            <td>{doctorResume.observations}</td>                            
+                        </tr>
+                       )}
                        </tbody>
                    </table>
                </div>;

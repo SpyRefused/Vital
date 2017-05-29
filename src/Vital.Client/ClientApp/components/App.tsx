@@ -10,12 +10,12 @@ export interface IAppProps {
 export default class App extends React.Component<IAppProps, void> {
 
     public render() {
-        return <div>                                      
-                       {this.props.navMenu}                   
-                   <div id="page-wrapper" className="gray-bg dashbard-1" style={this.props.divStylePageWrapper}>                       
+        return <div>
+                   {/*this.props.navMenu*/}
+                   <div id="page-wrapper" className="gray-bg dashbard_1" style={this.props.divStylePageWrapper}>
                        <div className="row border-bottom">
                            {this.props.topMenu}
-                       </div>                       
+                       </div>
                        {this.props.layout}
                    </div>
                </div>;

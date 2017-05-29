@@ -10,18 +10,17 @@ import Login from './components/Login';
 import DoctorResume from './components/DoctorResume';
 
 export default <Route component={App}>
-    <Route path='/' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Home }} />
-    <Route path='/counter' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }} />
-    <Route path='/fetchdata' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: FetchData }}>
-        <Route path='(:startDateIndex)' /> { /* Optional route segment that does not affect NavMenu highlighting */ }
-    </Route>
-                   <Route path='/jander' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }} />
-    <Route path='/login' components={{ layout: Login }} />
-                   <Route path='/doctorResume' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: FetchData }}>
-                       <Route path='(:idDoctor)' /> { /* Optional route segment that does not affect NavMenu highlighting */}
-
+                   <Route path='/' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Home }}/>
+                   <Route path='/counter' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }}/>
+                   <Route path='/fetchdata' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: FetchData }}>
+                       <Route path='(:startDateIndex)'/> { /* Optional route segment that does not affect NavMenu highlighting */}
                    </Route>
-</Route>;
+                   <Route path='/jander' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }}/>
+                   <Route path='/login' components={{ layout: Login }}/>
+                   <Route path='/doctor' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: DoctorResume }}>
+                       <Route path='(:idDoctor)'/> { /* Optional route segment that does not affect NavMenu highlighting */}
+                   </Route>
+               </Route>;
 
 // Enable Hot Module Replacement (HMR)
 if (module.hot) {

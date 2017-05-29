@@ -16,10 +16,14 @@ export interface DoctorResume {
     idDoctor: number;
     year: number;
     month: number;
+    observations: string;
+    resume: Resume[];
+}
+
+export interface Resume {
     settlementCode: string;
     receipt: string;
     serviceDetails: string;
-    observations: string;
     insureds: string;
     registersUnregisters: string;
 }
@@ -50,8 +54,8 @@ type DoctorActions = RequestDoctorResumeAction | ReceiveDoctorResumeAction;
 export const actionCreators = {
     requestDoctorResume: (idDoctor: number): AppThunkAction<DoctorActions> => (dispatch, getState) => {
         // Only load data if it's something we don't already have (and are not already loading)
-        if (idDoctor !== getState().doctor.idDoctor) {
-            let fetchTask = fetch(`/api/Doctor/GetDoctorResume?idDoctor=${ idDoctor }`)
+        
+            let fetchTask = fetch(`http://localhost:50679/api/Doctor/GetDoctorResume?idDoctor=${ idDoctor }`)
                 .then(response => response.json() as Promise<DoctorResume[]>)
                 .then(data => {
                     dispatch({ type: 'RECEIVE_DOCTOR_RESUME', idDoctor: idDoctor, doctorResume: data });
@@ -59,7 +63,6 @@ export const actionCreators = {
 
             addTask(fetchTask); // Ensure server-side prerendering waits for this to complete
             dispatch({ type: 'REQUEST_DOCTOR_RESUME', idDoctor: idDoctor });            
-        }
     }
 };
 
@@ -82,7 +85,7 @@ export const reducer: Reducer<DoctorState> = (state: DoctorState, action: Doctor
             if (action.idDoctor === state.idDoctor) {
                 return {
                     idDoctor: action.idDoctor,
-                    doctorResume: state.doctorResume,
+                    doctorResume: action.doctorResume,
                     isLoading: false
                 };
             }

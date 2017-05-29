@@ -70,16 +70,16 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
                                {doctorResume.resume.map((resume, index) => {
                                  
                                     if (index  > 0) {
-                                        <tr>
+                                       return <tr>
                                             <td>{resume.insureds}</td>
                                             <td>{resume.receipt}</td>
                                             <td>{resume.registersUnregisters}</td>
-                                        </tr>;
+                                        </tr>
                                     }
                                 } )}
                                
                             </div>
-                           )};
+                           )}
                        </tbody>
                    </table>
                </div>;

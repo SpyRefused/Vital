@@ -39,7 +39,7 @@ namespace Vital.Api.Controllers
                             new Resume
                             {
                                 SettlementCode = "sklajdkjasd1",
-                                Insureds = "hola",
+                                Insureds = "hola1",
                                 Receipt = "holas1",
                                 RegistersUnregisters = "ajkdasjd",
                                 ServiceDetails = "ksajdkasjd"
@@ -47,8 +47,8 @@ namespace Vital.Api.Controllers
                             new Resume
                             {
                                 SettlementCode = "sklajdkjasd2",
-                                Insureds = "hola",
-                                Receipt = "holas1",
+                                Insureds = "22222",
+                                Receipt = "2222222",
                                 RegistersUnregisters = "ajkdasjd",
                                 ServiceDetails = "ksajdkasjd"
                             }

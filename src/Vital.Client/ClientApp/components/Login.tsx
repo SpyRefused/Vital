@@ -6,8 +6,6 @@ import * as LoginStore from '../store/Login';
     
 type LoginProps = LoginStore.LoginState & typeof LoginStore.actionCreators;
 
- 
-
 class Login extends React.Component<LoginProps, void> {
     
     private username: HTMLInputElement;

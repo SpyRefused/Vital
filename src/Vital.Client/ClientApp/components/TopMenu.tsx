@@ -22,7 +22,7 @@ export default class TopMenu extends React.Component<ITopMenu, void> {
                        </a>
                        <form role="search" className="navbar-form-custom" action="search_results.html">
                            <div className="form-group">
-                               <input type="text" placeholder="Search for something..." className="form-control" name="top-search" id="top-search"/>
+                               <input type="text" placeholder="Buscar..." className="form-control" name="top-search" id="top-search"/>
                            </div>
 
                        </form>
@@ -41,6 +41,10 @@ export default class TopMenu extends React.Component<ITopMenu, void> {
                                <i className="fa fa-sign-out"></i> Log out
                            </a>
                        </li>
+                       <li>
+                    <Link to={'/'} activeClassName='active'>
+                               <span className="fa fa-file-pdf-o"></span> Home 
+                           </Link></li>
                    </ul>
                </nav>;
     }

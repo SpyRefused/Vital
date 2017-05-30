@@ -11,6 +11,12 @@ export interface DoctorState {
     doctorResume: DoctorResume[];
 }
 
+export interface DoctorTaxInformation {
+    year: number;
+    certificate: string;
+    id: string;
+}
+
 export interface DoctorResume {
     id: string;
     idDoctor: number;
@@ -18,6 +24,7 @@ export interface DoctorResume {
     month: number;
     observations: string;
     resume: Resume[];
+    doctorTaxInformation: DoctorTaxInformation[];
 }
 
 export interface Resume {

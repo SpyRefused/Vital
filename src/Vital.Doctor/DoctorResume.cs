@@ -18,6 +18,7 @@ namespace Vital.Doctor
         public int  Month { get; set; }
         public string Observations { get; set; }
         public IList<Resume> Resume {get; set;}
+        public IList<DoctorTaxInformation> DoctorTaxInformation { get; set; }
         
     }
 

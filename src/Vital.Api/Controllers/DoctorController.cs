@@ -52,11 +52,17 @@ namespace Vital.Api.Controllers
                                 RegistersUnregisters = "ajkdasjd",
                                 ServiceDetails = "ksajdkasjd"
                             }
-                        }
+                        },
+                        DoctorTaxInformation = new List<DoctorTaxInformation>()
                     });
             }
+            doctorResume[3].DoctorTaxInformation = new List<DoctorTaxInformation>
+            {
+                new DoctorTaxInformation {Year = 2017, Certificate = "kdjfdskjf", Id = Guid.NewGuid()}
+            };
             return doctorResume;
 
         }
+
     }
 }

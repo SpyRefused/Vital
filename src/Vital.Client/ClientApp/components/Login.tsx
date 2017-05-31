@@ -54,7 +54,11 @@ class Login extends React.Component<LoginProps, void> {
                                    <a className="btn btn-sm btn-white btn-block" href="register.html">Registrarse</a>
                                </div>
                                <p className="m-t">
-                                   <small>{ new Date().getDate() + "/" + new Date().getMonth() + "/" + new Date().getFullYear()}</small>
+                                   <small>{ new Date().getDate() +
+                                       "/" +
+                                       new Date().getMonth() +
+                                       "/" +
+                                       new Date().getFullYear()}</small>
                                </p>
                            </div>
                        </div>
@@ -73,7 +77,7 @@ class Login extends React.Component<LoginProps, void> {
 }
 
 export default connect(
-(state: ApplicationState) => state.login, 
-LoginStore.actionCreators                 
+    (state: ApplicationState) => state.login,
+    LoginStore.actionCreators
 )(Login);
 

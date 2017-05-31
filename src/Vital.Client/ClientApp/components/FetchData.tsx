@@ -40,7 +40,6 @@ class FetchData extends React.Component<WeatherForecastProps, void> {
                    <table className='table'>
                        <thead>
                        <tr>
-
                            <th><Translate value="application.title"/></th>
                            <th>Temp. (C)</th>
                            <th>Temp. (F)</th>

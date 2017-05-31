@@ -13,6 +13,9 @@ export interface ApplicationState {
     locale: Locale.LocaleState,
     login: Login.LoginState,
     doctor: Doctor.DoctorState,
+    i18n: any,
+    location: any,
+    history: any
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using

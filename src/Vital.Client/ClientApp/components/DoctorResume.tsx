@@ -12,7 +12,7 @@ type DoctorResumeProps =
     DoctorResumeState.DoctorState // ... state we've requested from the Redux store
     & LocaleState.LocaleState
     & typeof DoctorResumeState.actionCreators // ... plus action creators we've requested
-    & { params: { idDoctor: string } }; // ... plus incoming routing parameters
+    & { params: { idDoctor: string }, translations, locale }; // ... plus incoming routing parameters
  
 
 class DoctorResume extends React.Component<DoctorResumeProps, void> {
@@ -23,11 +23,11 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
         this.props.requestDoctorResume(idDoctor);
     }
 
-    //componentWillReceiveProps(nextProps: DoctorResumeProps) {
-    //    // This method runs when incoming props (e.g., route params) change
-    //    let idDoctor = parseInt(nextProps.params.idDoctor) || 0;
-    //    this.props.requestDoctorResume(idDoctor);
-    //}
+    componentWillReceiveProps(nextProps: DoctorResumeProps) {
+        // This method runs when incoming props (e.g., route params) change
+        let idDoctor = parseInt(nextProps.params.idDoctor) || 0;
+        this.props.requestDoctorResume(idDoctor);
+    }
 
     public render() {
         return <div>
@@ -62,7 +62,7 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
             <div className="row border-bottom white-bg dashboard-header">
 
                 <div className="ibox-content ibox-heading">
-
+                    <h3>{this.props.translations[this.props.locale].doctor.title}</h3>
                     <h3><Translate value="doctor.title" /></h3>
                     <small><i className="fa fa-file-pdf-o"></i> Haga click en los iconos de documento para descargar.</small>
                 </div>
@@ -169,15 +169,10 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
 
 
 export default connect(
-    (state: ApplicationState) => {return {
-
-        locale: state.locale.locale,
-        doctorResume: state.doctor.doctorResume,
-        idDoctor: state.doctor.idDoctor,
-        isLoading:  state.doctor.isLoading,
-    }}, // Selects which state properties are merged into the component's props
+    (state: ApplicationState) =>
+    Object.assign(state.doctor, state.i18n), // Selects which state properties are merged into the component's props
     DoctorResumeState.actionCreators // Selects which action creators are merged into the component's props  
-)(DoctorResume);    
+)(DoctorResume);
 
 
     

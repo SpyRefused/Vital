@@ -1,6 +1,6 @@
 ﻿import { Reducer } from 'redux';
 import { AppThunkAction } from './';
-import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n';
+import { setLocale } from 'react-redux-i18n';
 
 // -----------------
 // STATE - This defines the type of data maintained in the Redux store.
@@ -21,10 +21,10 @@ interface RequestSetLocaleAction {
 
 // Declare a 'discriminated union' type. This guarantees that all references to 'type' properties contain one of the
 // declared type strings (and not any other arbitrary string).
-type KnownAction = RequestSetLocaleAction | any;
+type LocaleActions = RequestSetLocaleAction | any;
 
 export const actionCreators = {
-    requestSetLocale: (locale: string): AppThunkAction<KnownAction> => (dispatch, getState) => {
+    requestSetLocale: (locale: string): AppThunkAction<LocaleActions> => (dispatch, getState) => {
         dispatch(setLocale(locale));
         dispatch({ type: 'REQUEST_SET_LOCALE', locale: locale });
     }
@@ -35,7 +35,7 @@ export const actionCreators = {
 
 const unloadedState: LocaleState = { locale: '' };
 
-export const reducer: Reducer<LocaleState> = (state: LocaleState, action: KnownAction) => {
+export const reducer: Reducer<LocaleState> = (state: LocaleState, action: LocaleActions) => {
     switch (action.type) {
     case 'REQUEST_SET_LOCALE':
         return {

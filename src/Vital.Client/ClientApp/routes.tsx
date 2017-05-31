@@ -8,6 +8,7 @@ import NavMenu from './components/NavMenu';
 import TopMenu from './components/TopMenu';
 import Login from './components/Login';
 import DoctorResume from './components/DoctorResume';
+import { requireAuthentication } from './components/Authentication';
 
 export default <Route component={App}>
                    <Route path='/' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Home }}/>
@@ -17,7 +18,7 @@ export default <Route component={App}>
                    </Route>
                    <Route path='/jander' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }}/>
                    <Route path='/login' components={{ layout: Login }}/>
-                   <Route path='/doctor' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: DoctorResume }}>
+                   <Route path='/doctor' components={{ navMenu:  requireAuthentication(NavMenu), topMenu: requireAuthentication(TopMenu), layout: requireAuthentication(DoctorResume) }}>
                        <Route path='(:idDoctor)'/> { /* Optional route segment that does not affect NavMenu highlighting */}
                    </Route>
                </Route>;

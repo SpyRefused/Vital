@@ -40,11 +40,7 @@ export default class TopMenu extends React.Component<ITopMenu, void> {
                            <a href="login.html">
                                <i className="fa fa-sign-out"></i> Log out
                            </a>
-                       </li>
-                       <li>
-                    <Link to={'/'} activeClassName='active'>
-                               <span className="fa fa-file-pdf-o"></span> Home 
-                           </Link></li>
+                       </li>                       
                    </ul>
                </nav>;
     }

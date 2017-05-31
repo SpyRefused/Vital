@@ -104,9 +104,8 @@ export const actionCreators = {
                     isFetching: false,
                     isAuthenticated: true,
                     idToken: data.idToken
-            });
+                });
             }
-            return Promise.reject(data);
         });
     },
     requestLogout: (): AppThunkAction<KnownAction> => (dispatch, getState) => {

@@ -11,14 +11,14 @@ import DoctorResume from './components/DoctorResume';
 import { requireAuthentication } from './components/Authentication';
 
 export default <Route component={App}>
-                   <Route path='/' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Home }}/>
+    <Route path='/' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: requireAuthentication(DoctorResume) }}/>
                    <Route path='/counter' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }}/>
                    <Route path='/fetchdata' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: FetchData }}>
                        <Route path='(:startDateIndex)'/> { /* Optional route segment that does not affect NavMenu highlighting */}
                    </Route>
                    <Route path='/jander' components={{ navMenu: NavMenu, topMenu: TopMenu, layout: Counter }}/>
-                   <Route path='/login' components={{ layout: Login }}/>
-                   <Route path='/doctor' components={{ navMenu:  requireAuthentication(NavMenu), topMenu: requireAuthentication(TopMenu), layout: requireAuthentication(DoctorResume) }}>
+                   <Route path='/login' components={{ topMenu: TopMenu, layout: Login }}/>
+                   <Route path='/doctor' components={{ topMenu: TopMenu, layout: requireAuthentication(DoctorResume) }}>
                        <Route path='(:idDoctor)'/> { /* Optional route segment that does not affect NavMenu highlighting */}
                    </Route>
                </Route>;

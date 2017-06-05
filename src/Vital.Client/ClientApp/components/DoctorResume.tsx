@@ -23,11 +23,18 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
         this.props.requestDoctorResume(idDoctor);
     }
 
-    componentWillReceiveProps(nextProps: DoctorResumeProps) {
-        // This method runs when incoming props (e.g., route params) change
-        let idDoctor = parseInt(nextProps.params.idDoctor) || 0;
-        this.props.requestDoctorResume(idDoctor);
-    }
+    //shouldComponentUpdate(nextProps) {
+    //    if (nextProps.stateComponent1 !== this.props.stateComponent1) {
+    //        return false;
+    //    }
+    //    return true;
+    //}
+
+    //componentWillReceiveProps(nextProps: DoctorResumeProps) {
+    //    // This method runs when incoming props (e.g., route params) change
+    //    let idDoctor = parseInt(nextProps.params.idDoctor) || 0;
+    //    this.props.requestDoctorResume(idDoctor);
+    //}
 
     public render() {
         return <div>
@@ -62,7 +69,6 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
             <div className="row border-bottom white-bg dashboard-header">
 
                 <div className="ibox-content ibox-heading">
-                    <h3>{this.props.translations[this.props.locale].doctor.title}</h3>
                     <h3><Translate value="doctor.title" /></h3>
                     <small><i className="fa fa-file-pdf-o"></i> Haga click en los iconos de documento para descargar.</small>
                 </div>
@@ -73,7 +79,7 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
     
     private renderDoctorResumeTable() {
         return <div className='table-responsive'>
-                   <table className='table table-striped'>
+                   <table className='table table-bordered'>
                        <thead>
                        <tr>
                            <th>Periodo de liquidacion</th>
@@ -141,8 +147,7 @@ class DoctorResume extends React.Component<DoctorResumeProps, void> {
                                                   <td><Link to={resume.serviceDetails} activeClassName='active'>
                                                       <span className="fa fa-file-pdf-o"></span> Ver liquidacion: {
                                                           doctorResume.idDoctor + "-" + index}
-                                                  </Link><br/><Link to={resume.serviceDetails
-} activeClassName='active'>
+                                                  </Link><br/><Link to={resume.serviceDetails} activeClassName='active'>
                                                       <span className="fa fa-file-excel-o"></span> Ver liquidacion: {
                                                           doctorResume.idDoctor + "-" + index}
                                                   </Link></td>

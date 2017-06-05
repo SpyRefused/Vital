@@ -3,21 +3,25 @@ import * as LoginState from '../store/Login'
 import {ApplicationState} from "ClientApp/store/index";
 import { connect } from 'react-redux';
 
-type AuthenticatedComponentProps =
-    LoginState.LoginState & {location, history}
+type AuthenticatedComponentProps = LoginState.LoginState & 
+    { isAuthenticated, location, history}
 
 export function requireAuthentication(Component) {
 
     class AuthenticatedComponent extends React.Component<AuthenticatedComponentProps, void> {
 
+        shouldComponentUpdate(nextProps) {
+            return true;
+        }
+
         componentWillMount() {
             this.checkAuth();
         }
 
-        componentWillReceiveProps(nextProps) {
-            this.checkAuth();
-        }
-
+        componentWillReceiveProps(nextProps) {  
+            this.checkAuth();   
+        }   
+            
         private checkAuth() {
             if (!this.props.isAuthenticated) {
                 let redirectAfterLogin = this.props.location.pathname;
@@ -29,20 +33,16 @@ export function requireAuthentication(Component) {
         }
 
         render() {
-            return (
-                <div>
-                    {this.props.isAuthenticated === true
-                        ? <Component {...this.props}/>
-                        : null
-                    }
-                </div>
-            );
+            return this.props.isAuthenticated === true
+                ? <Component {...this.props}/>
+                : null;
         }
     }
 
     return connect(
         (state: ApplicationState) =>
-        Object.assign(state.login, state.location, state.history) // Selects which state properties are merged into the component's props
+        state.login,
+ // Selects which state properties are merged into the component's props
+        LoginState.actionCreators
     )(AuthenticatedComponent);
-
 }

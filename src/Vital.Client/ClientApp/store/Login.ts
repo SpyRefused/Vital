@@ -1,6 +1,6 @@
 ﻿import { Reducer } from 'redux';
 import { AppThunkAction } from './';
-import { fetch, addTask } from 'domain-task';
+import { fetch } from 'domain-task';
 import { browserHistory } from 'react-router';
 
 // -----------------
@@ -158,7 +158,7 @@ export const reducer: Reducer<LoginState> = (state: LoginState, action: KnownAct
             isAuthenticated: true,
             idToken: action.idToken,
             credentials: null,
-            message: ''
+            message: 'Login correcto! Rediriendo...'
         };
     case 'LOGIN_FAILURE':
         return {
@@ -180,6 +180,6 @@ export const reducer: Reducer<LoginState> = (state: LoginState, action: KnownAct
         // The following line guarantees that every action in the KnownAction union has been covered by a case above
         const exhaustiveCheck: any = action;
     }
-
+                
     return state || unloadedState;
 };

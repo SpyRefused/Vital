@@ -3,9 +3,9 @@ using Vital.Infrastructure.Utils;
 
 namespace Vital.Doctor
 {
-    public class TaxInformationCerficate
+    public class DoctorTaxInformationCerficate
     {
-        public TaxInformationCerficate()
+        public DoctorTaxInformationCerficate()
         {
             Id = GuidUtil.NewSequentialId();
         }

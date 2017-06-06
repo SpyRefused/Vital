@@ -6,12 +6,19 @@
     <ApplicationIcon />
     <OutputTypeEx>library</OutputTypeEx>
     <StartupObject />
+    <AssemblyName>Vital.Data.Old</AssemblyName>
+    <RootNamespace>Vital.Data.Old</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Vital.Doctor\Vital.Doctor.csproj" />
+    <ProjectReference Include="..\Vital.Doctor\Vital.Doctor.csproj" />
   </ItemGroup>
 
 </Project>

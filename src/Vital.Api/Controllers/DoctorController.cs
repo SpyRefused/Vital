@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Vital.Data.Old.Process;
 using Vital.Doctor;
 
 namespace Vital.Api.Controllers
@@ -64,5 +65,13 @@ namespace Vital.Api.Controllers
 
         }
 
+        [AllowAnonymous]
+        [HttpGet("[action]")]
+        public bool StartProcess()
+        {
+            var doctorVitalProcess = new Process();
+
+            return doctorVitalProcess.Start();
+        }
     }
 }

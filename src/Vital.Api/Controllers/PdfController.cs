@@ -31,7 +31,7 @@ namespace Vital.Api.Controllers
         [HttpGet("TaxInformationCertificate/{idDoctor}/{year}/{language}")]
         public IActionResult TaxInformationCertificate(int idDoctor, int year, string language)
         {
-            return View("TaxInformationCertificate_" + language, new TaxInformationCerficate{Cif = "E17329822", Name = "ANESTESIA GIRONA C.B.", Year = "2017"});
+            return View("TaxInformationCertificate_" + language, new DoctorTaxInformationCerficate{Cif = "E17329822", Name = "ANESTESIA GIRONA C.B.", Year = "2017"});
         }
 
         [AllowAnonymous]

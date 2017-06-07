@@ -9,7 +9,7 @@ namespace Vital.Data.Old.Database
         {
             optionsBuilder.UseSqlServer(@"Server=DESENVOLUPAMENT;Database=VitalDat;Trusted_Connection=True;");
         }
-        //public virtual DbSet<Medicos> Medicos { get; set; }
+        public virtual DbSet<Medicos> Medicos { get; set; }
         public virtual DbSet<CptMed> CptMed { get; set; }
         //public virtual DbSet<SinAsxDossierCorreoWeb> SinAsxDossierCorreoWeb { get; set; }
         //public virtual DbSet<SinAsxDossierCorreo> SinAsxDossierCorreo { get; set; }
@@ -17,7 +17,7 @@ namespace Vital.Data.Old.Database
         //public virtual DbSet<SinAsxLiqWeb> SinAsxLiqWeb { get; set; }
         //public virtual DbSet<SinAsxRelWeb> SinAsxRelWeb { get; set; }       
         //public virtual DbSet<EspMed> EspMed { get; set; }
-        //public virtual DbSet<Reten> Reten { get; set; }
+        public virtual DbSet<Reten> Reten { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -85,37 +85,37 @@ namespace Vital.Data.Old.Database
             //    .Property(e => e.WksEspMed)
             //    .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.ColMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.ColMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.NifMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.NifMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.NomMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.NomMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.NomFiscMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.NomFiscMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.PorIrpfMed)
-            //    .HasColumnType("decimal(5,2)");
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.PorIrpfMed)
+                .HasColumnType("decimal(5,2)");
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.ObsMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.ObsMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.UserMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.UserMed)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Medicos>()
-            //    .Property(e => e.WksMed)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Medicos>()
+                .Property(e => e.WksMed)
+                .IsUnicode(false);
 
             //modelBuilder.Entity<SinAsxDossierCorreo>()
             //    .Property(e => e.DestCorreo)
@@ -145,7 +145,7 @@ namespace Vital.Data.Old.Database
             //    .Property(e => e.TEXTCORREO)
             //    .IsUnicode(false);
 
-           
+
 
             //modelBuilder.Entity<SinAsxRelWeb>()
             //    .Property(e => e.ClvExp)
@@ -171,53 +171,53 @@ namespace Vital.Data.Old.Database
             //    .Property(e => e.NomAsg)
             //    .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.ClvReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.ClvReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.ImportReten)
-            //    .HasColumnType("decimal(10, 2)");
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.ImportReten)
+                .HasColumnType("decimal(10, 2)");
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.IrpfReten)
-            //    .HasColumnType("decimal(10, 2)");
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.IrpfReten)
+                .HasColumnType("decimal(10, 2)");
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.SegSocReten)
-            //    .HasColumnType("decimal(10, 2)");
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.SegSocReten)
+                .HasColumnType("decimal(10, 2)");
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.Especie)
-            //    .HasColumnType("decimal(10, 2)");
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.Especie)
+                .HasColumnType("decimal(10, 2)");
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.IrpfEspecie)
-            //    .HasColumnType("decimal(10, 2)");
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.IrpfEspecie)
+                .HasColumnType("decimal(10, 2)");
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.NifReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.NifReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.NomReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.NomReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.DirReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.DirReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.LocReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.LocReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.UserReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.UserReten)
+                .IsUnicode(false);
 
-            //modelBuilder.Entity<Reten>()
-            //    .Property(e => e.WksReten)
-            //    .IsUnicode(false);
+            modelBuilder.Entity<Reten>()
+                .Property(e => e.WksReten)
+                .IsUnicode(false);
         }
     }
 }

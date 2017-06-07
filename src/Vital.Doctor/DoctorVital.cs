@@ -6,11 +6,12 @@ namespace Vital.Doctor
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=VitalDoctor;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=Vital;Trusted_Connection=True;");
         }
 
         public virtual DbSet<DoctorMedicalConcept> DoctorMedicalConcepts { get; set; }
         public virtual DbSet<DoctorMedicalConceptResources> DoctorMedicalConceptResources { get; set; }
+        public virtual DbSet<DoctorTaxInformationCerficate> DoctorTaxInformationCerficates { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Vital.Data.Old.Process;
@@ -69,7 +68,7 @@ namespace Vital.Api.Controllers
         [HttpGet("[action]")]
         public bool StartProcess()
         {
-            var doctorVitalProcess = new Process();
+            var doctorVitalProcess = new SyncDoctorProcess();
 
             return doctorVitalProcess.Start();
         }

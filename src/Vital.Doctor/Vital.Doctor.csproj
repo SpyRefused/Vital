@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <AssemblyName>Vital.Doctor</AssemblyName>
     <RootNamespace>Vital.Doctor</RootNamespace>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

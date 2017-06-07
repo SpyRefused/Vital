@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\bootstrap.css.map" />
-    <Content Include="wwwroot\footer.html" />
-    <Content Include="wwwroot\header.html" />
     <Content Include="wwwroot\help-wkhtmltoimage.txt" />
     <Content Include="wwwroot\help-wkhtmltopdf.txt" />
     <Content Include="wwwroot\pdf\footer.html" />
@@ -31,18 +28,12 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Documents\Visual Studio 2017\Projects\Vital.Identity\Vital.Identity.csproj" />
-    <ProjectReference Include="..\..\ConsoleApp1\Vital.Data.Old.csproj" />
-    <ProjectReference Include="..\Vital.Doctor\Vital.Doctor.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Copyshop">
-      <HintPath>Lib\Copyshop.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Views\Pdf\Footer.cshtml" />
     <None Include="Views\Pdf\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vital.Data.Old\Vital.Data.Old.csproj" />
+    <ProjectReference Include="..\Vital.Doctor\Vital.Doctor.csproj" />
   </ItemGroup>
 
 </Project>
